@@ -6,8 +6,7 @@
 import pygame
 import constants
 from player import Player
-from wall import Wall
-from rooms import Room, Room1, Room2, Room3
+from rooms import Room1, Room2, Room3
 
 
 class Game(object):
