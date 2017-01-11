@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
         self.change_x += x
         self.change_y += y
         
-    def update(self, walls):
+    def move(self, walls):
         """ Find a new position for the player """
         # Move left/right
         self.rect.x += self.change_x
