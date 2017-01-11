@@ -6,7 +6,7 @@ Created on Wed Jan 11 20:28:26 2017
 """
 import pygame
 import constants
-from platform import Platform
+from platforms import Platform
 
 class Level():
     """ This is a generic super-class used to define a level.
@@ -38,7 +38,7 @@ class Level():
         """ When the user moves left/right and we need to scroll
         everything: """
         # Keep track of the shift amount
-        self.world_shift = shift_x
+        self.world_shift += shift_x
         
         # Go thgouth all the sprite lists and shift
         for platform in self.platform_list:
@@ -50,7 +50,7 @@ class Level():
 # Create platforms for the level
 class Level_01(Level):
     def __init__(self, player):
-        super().__init__()
+        Level.__init__(self, player)
         
         self.level_limit = -1000
         
@@ -72,7 +72,7 @@ class Level_01(Level):
             
 class Level_02(Level):
     def __init__(self, player):
-        super().__init__()
+        Level.__init__(self, player)
         
         self.level_limit = -1000
         
